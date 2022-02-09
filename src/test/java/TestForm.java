@@ -15,16 +15,20 @@ public class TestForm {
     @Test
     void testForm() {
         open("https://demoqa.com/automation-practice-form");
-        $x("//input[@placeholder='First Name']").setValue("Lena");
-        $x("//input[@placeholder='Last Name']").setValue("Golovach");
-        $x("//input[@placeholder='name@example.com']").setValue("lengen@gmail.com");
+        $x("//input[@placeholder='First Name']").setValue("Boris");
+        $x("//input[@placeholder='Last Name']").setValue("Britva");
+        $x("//input[@placeholder='name@example.com']").setValue("borisbritva@gmail.com");
         $x("//input[@placeholder='Mobile Number']").setValue("8999818907");
         $x("//*[text() = 'Male']").click();
         $x("//*[text() = 'Sports']").click();
         $("[id = subjectsInput]").setValue("Math").pressEnter();
         $("[id = react-select-3-input]").setValue("Uttar Pradesh").pressEnter();
         $("[id = react-select-4-input]").setValue("Agra").pressEnter();
-        $x("//textarea[@placeholder='Current Address']").setValue("gamag");
+        $x("//textarea[@placeholder='Current Address']").setValue("USSR");
+        $("[class=react-datepicker__month-select]").selectOptionByValue("8");
+        $("[class=react-datepicker__year-select]").selectOption("1990");
+        $("[id=uploadPicture]").uploadFile();
+
     }
 
 }
