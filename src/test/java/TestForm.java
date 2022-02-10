@@ -49,7 +49,6 @@ public class TestForm {
                 Condition.textCaseSensitive("State and City"), Condition.textCaseSensitive("Uttar Pradesh Agra")
         );
 
-
+        $("[id=closeLargeModal]").click();
     }
-
 }
