@@ -3,6 +3,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+
 import java.io.File;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -32,7 +33,7 @@ public class TestForm {
         $("[class=react-datepicker__month-select]").selectOptionByValue("8");
         $("[class=react-datepicker__year-select").selectOption("1990");
         $(".react-datepicker__day--013").click();
-        $("[id = uploadPicture]").uploadFile(new File("src/test/resources/Pictest.png"));
+        $("[id = uploadPicture]").uploadFile(new File(("src/test/resources/Pictest.png")));
         $x("//button[@id='submit']").click();
 
 
