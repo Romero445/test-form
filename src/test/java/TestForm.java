@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -19,22 +20,22 @@ public class TestForm {
     @Test
     void testPracticeForm() {
         open("https://demoqa.com/automation-practice-form");
-        $x("//input[@placeholder='First Name']").setValue("Boris");
-        $x("//input[@placeholder='Last Name']").setValue("Britva");
-        $x("//input[@placeholder='name@example.com']").setValue("borisbritva@gmail.com");
-        $x("//input[@placeholder='Mobile Number']").setValue("8999818907");
-        $x("//*[text() = 'Male']").click();
-        $x("//*[text() = 'Sports']").click();
-        $("[id = subjectsInput]").setValue("Math").pressEnter();
-        $("[id = react-select-3-input]").setValue("Uttar Pradesh").pressEnter();
-        $("[id = react-select-4-input]").setValue("Agra").pressEnter();
+        $("#firstName").setValue("Boris");
+        $("#lastName").setValue("Britva");
+        $("#userEmail").setValue("borisbritva@gmail.com");
+        $("#userNumber").setValue("8999818907");
+        $(new ByText("Male")).click();
+        $(new ByText("Sports")).click();
+        $("#subjectsInput").setValue("Math").pressEnter();
+        $("#react-select-3-input").setValue("Uttar Pradesh").pressEnter();
+        $("#react-select-4-input").setValue("Agra").pressEnter();
         $x("//textarea[@placeholder='Current Address']").setValue("USSR");
-        $("[id = dateOfBirthInput").click();
+        $("#dateOfBirthInput").click();
         $("[class=react-datepicker__month-select]").selectOptionByValue("8");
         $("[class=react-datepicker__year-select").selectOption("1990");
         $(".react-datepicker__day--013").click();
-        $("[id = uploadPicture]").uploadFile(new File(("src/test/resources/Pictest.png")));
-        $x("//button[@id='submit']").click();
+        $("#uploadPicture").uploadFile(new File(("src/test/resources/Pictest.png")));
+        $("#submit").click();
 
 
         $("[id=example-modal-sizes-title-lg]").shouldHave(Condition.text("Thanks for submitting the form"));
