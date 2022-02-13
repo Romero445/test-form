@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestForm {
@@ -24,8 +25,8 @@ public class TestForm {
         $("#lastName").setValue("Britva");
         $("#userEmail").setValue("borisbritva@gmail.com");
         $("#userNumber").setValue("8999818907");
-        $(new ByText("Male")).click();
-        $(new ByText("Sports")).click();
+        $(byText("Male")).click();
+        $(byText("Sports")).click();
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#react-select-3-input").setValue("Uttar Pradesh").pressEnter();
         $("#react-select-4-input").setValue("Agra").pressEnter();
@@ -38,7 +39,8 @@ public class TestForm {
         $("#submit").click();
 
 
-        $("[id=example-modal-sizes-title-lg]").shouldHave(Condition.text("Thanks for submitting the form"));
+
+        $("#example-modal-sizes-title-lg").shouldHave(Condition.text("Thanks for submitting the form"));
         $("[class=table-responsive]").shouldHave(
                 Condition.textCaseSensitive("Student Name"), Condition.textCaseSensitive("Boris Britva"),
                 Condition.textCaseSensitive("Student Email"), Condition.textCaseSensitive("borisbritva@gmail.com"),
@@ -51,6 +53,6 @@ public class TestForm {
                 Condition.textCaseSensitive("State and City"), Condition.textCaseSensitive("Uttar Pradesh Agra")
         );
 
-        $("[id=closeLargeModal]").click();
+        $("#closeLargeModal").click();
     }
 }
