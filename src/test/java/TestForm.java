@@ -15,12 +15,14 @@ public class TestForm {
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl="https://demoqa.com";
+
 
     }
 
     @Test
     void testPracticeForm() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         $("#firstName").setValue("Boris");
         $("#lastName").setValue("Britva");
         $("#userEmail").setValue("borisbritva@gmail.com");
