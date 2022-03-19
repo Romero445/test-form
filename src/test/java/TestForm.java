@@ -1,6 +1,5 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -22,6 +21,7 @@ public class TestForm {
 
     @Test
     void testPracticeForm() {
+
         open("/automation-practice-form");
         $("#firstName").setValue("Boris");
         $("#lastName").setValue("Britva");
